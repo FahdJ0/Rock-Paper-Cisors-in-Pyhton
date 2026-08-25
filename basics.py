@@ -1,13 +1,18 @@
 import random
-secret_number = random.randint(1,100)
-guess = int(input("Enter your guess : "))
-attempts = 1
+computer_choice = random.choice(['r', 'p', 's'])
+r = 'rock'
+p = 'paper'
+s = 'scissor'
 
-while guess != secret_number:
-    if guess > secret_number:
-        print("Too high ! ")
-    else : print("Too low ! ")
-
-    guess = int(input("Try again : "))
-    attempts += 1
-print(f"You got it ! It took you {attempts} attemps.")
+user_choice = input("Choose bewteen rock (r), paper (p) and scissors (s) : ")
+if user_choice == r and computer_choice == s:
+    print("User won ! ")
+elif user_choice == p and computer_choice == r:
+    print("User won ! ")
+elif user_choice == s and computer_choice == p:
+    print("User won !")
+elif user_choice == computer_choice:
+    print("Equality")
+else :
+    print("Computer won ! ")
+print(f"The computer choosed {computer_choice} and you choosed {user_choice}")
